@@ -35,17 +35,29 @@ body{
 .text-gray{
     color: #7D7F78;
 }
+.btn-secondary{
+    font-size: 16px;
+    padding: 12px 26px;
+	border: solid 1px var(--primary);
+	background: none;
+	color: var(--primary);
+}
+.btn-secondary:hover{
+	border: solid 1px var(--primary);
+	background: var(--primary);
+	color: black !important;
+}
 .btn-primary{
-    background-color: var(--primary);
-    border: var(--primary);
+    background: var(--primary);
+    border: solid 1px var(--primary);
     font-size: 16px;
     padding: 12px 26px;
     color: black;
 }
 .btn-primary:hover, .btn-primary:focus, .btn-primary:active{
-    background-color: var(--primary) !important;
-    opacity: 0.8;
-    color: black !important;
+    background: none !important;
+	border: solid 1px var(--primary) !important;
+    color: var(--primary) !important;
 }
 .banner{
     height: 100vh;
@@ -151,6 +163,7 @@ body{
 #stars {
 	width: 1px;
 	height: 1px;
+	border-radius: 10px;
 	background: transparent;
 	box-shadow: 1487px 822px #fff, 702px 619px #fff, 579px 76px #fff,
 		881px 14px #fff, 1903px 741px #fff, 1401px 1791px #fff, 1316px 857px #fff,
@@ -518,6 +531,7 @@ body{
 #stars2 {
 	width: 2px;
 	height: 2px;
+	border-radius: 10px;
 	background: transparent;
 	box-shadow: 592px 134px #fff, 346px 741px #fff, 1000px 1781px #fff,
 		996px 728px #fff, 1085px 1462px #fff, 526px 1128px #fff, 1951px 557px #fff,
@@ -635,6 +649,7 @@ body{
 #stars3 {
 	width: 3px;
 	height: 3px;
+	border-radius: 10px;
 	background: transparent;
 	box-shadow: 222px 946px #fff, 408px 926px #fff, 1608px 1741px #fff,
 		1977px 1436px #fff, 713px 1152px #fff, 139px 39px #fff, 497px 1590px #fff,
@@ -707,4 +722,63 @@ body{
 	to {
 		transform: translateY(-2000px);
 	}
+}
+
+.mouse {
+    width: 26px;
+    height: 40px;
+    border-radius: 15px;
+    border: 2px solid #fff;
+    position: relative;
+    overflow: hidden;
+    margin-top: 40px;
+}
+.mouse .roll {
+    position: absolute;
+    top: 8px;
+    left: 50%;
+    width: 4px;
+    margin-left: -2px;
+    height: 4px;
+    border-radius: 4px;
+    background: #fff;
+    -webkit-animation: mouseScroll .8s cubic-bezier(.7,0,.3,1) infinite alternate;
+    animation: mouseScroll .8s cubic-bezier(.7,0,.3,1) infinite alternate;
+    z-index: 2;
+}
+.mouse .rollshadow {
+    position: absolute;
+    top: 8px;
+    left: 50%;
+    width: 4px;
+    margin-left: -2px;
+    height: 4px;
+    background: #fff;
+    border-radius: 4px;
+    -webkit-animation: mouseScroll .8s cubic-bezier(.7,0,.3,1) infinite alternate;
+    animation: mouseScroll .8s cubic-bezier(.7,0,.3,1) infinite alternate;
+        animation-delay: 0s;
+    -webkit-animation-delay: 80ms;
+    animation-delay: 80ms;
+    z-index: 1;
+}
+@-webkit-keyframes mouseScroll {
+ 0% {
+  -webkit-transform:translateY(0);
+  transform:translateY(0)
+ }
+ 100% {
+  -webkit-transform:translateY(14px);
+  transform:translateY(14px)
+ }
+}
+@keyframes mouseScroll {
+ 0% {
+  -webkit-transform:translateY(0);
+  transform:translateY(0)
+ }
+ 100% {
+  -webkit-transform:translateY(14px);
+  transform:translateY(14px)
+ }
 }
